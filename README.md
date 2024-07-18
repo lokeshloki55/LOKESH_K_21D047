@@ -57,6 +57,7 @@
 
 
 ## File:App(Main Class)
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/app.png)
 The App.java file contains the main class.The App class extends Frame and serves as the entry point of the application. It provides buttons for administrator and employee logins.
 
 ### Fields:
@@ -65,50 +66,52 @@ adminButton: A button for administrator login.<br/>
 employeeButton: A button for employee login.
 
 ### CheckAdminFrame:*(username:admin ,password 123)
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/security_admin.png)
 
 A frame that prompts the user to enter a username and password for administrator login.
 Checks if the credentials match the hardcoded values (admin and 123).
 Opens a new AdminFrame upon successful login or a popuperror frame if the login fails.
 
 ### CheckEmployeeFrame:*(username:employee1 , password:321)
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/security_employee.png)
 
 Similar to checkAdminFrame, but for employee login.
 Checks if the credentials match the hardcoded values (employee1 and 321).
 Opens a new EmployeeFrame upon successful login or a popuperror frame if the login fails.
 
 ## File:EmployeeFrame:
-
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/employee_main.png)
 This class creates the main frame of the application with three buttons: "NEW BILL", "PRINT BILL", and "STOCK LIST".
 Each button is associated with an action listener that opens a new window when clicked.
 
 ### 1.stocklist:
-
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/Stock_status.png)
 This class displays a list of products from the database.
 It connects to a MySQL database, retrieves product details (ID, Name, Quantity), and shows them in a text area.
 Products with a quantity less than or equal to 5 are marked as "Critical Level", and others as "Normal Level".
 
 ### 2.billprint:
-
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/print_bill.png)
 This class allows users to print a bill by entering the bill number.
 It provides a text field to input the bill number, a submit button to retrieve the bill, and a text area to display the bill details.
 The Bill.getBillFromDB method is used to fetch the bill details from the database.
 
 ### 3.newbill:
-
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/new_bill.png)
 This class facilitates the creation of a new bill.
 Users can enter product IDs and quantities, and the application updates the invoice area with these details.
 It also calculates the total value of the bill and allows the user to continue to the final billing process.
 Additional features include changing the date, clearing the last item, and handling membership status for discounts.
 
 ### 4.printfunction:
-
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/new_bill1.png)
 This class handles customer selection (existing or new) before finalizing the bill.
 For existing customers, the bill is created and customer details are fetched.
 For new customers, the application validates the input and creates a new customer entry in the database.
 The final bill is generated and displayed in the finalprint class.
 
 ### 5.finalprint:
-
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/new_bill2.png)
 This class generates the final bill and saves it to a file.
 It writes customer details, item details, total amount, tax, discounts, net payable amount, and balance to a file.
 The bill is also saved in the database using the Bill.addBill method.
@@ -123,25 +126,32 @@ This class creates a popup window to display success messages.
 
 
 ## File: AdminFrame
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/admin_main.png)
 The AdminFrame class is the main class that extends Frame and serves as the user interface for administrative tasks such as adding products, sales analysis, customer payments, deleting options, purchase analysis, viewing inventory, updating products, paying sellers, product analysis, and customer analysis..
 
 
 ### 1.Class: paysellerframe
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/seller_payment.png)
 The paysellerframe class extends Frame and provides functionality to pay a seller.
 
 ### 2.Class: paycustomerframe
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/customer_payment.png)
 The paycustomerframe class extends Frame and provides functionality to record customer payments.
 
 ### 3.Class: updateproductframe
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/update_product.png)
 The updateproductframe class extends Frame and provides functionality to update product details.
 
 ### 4.Class: salesanalysisframe
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/sales_analysis_billwisereport.png)
 The salesanalysisframe class extends Frame and provides functionality to analyze sales.
 
 ### 5.Class: purchaseanalysisframe
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/purchase_analysis.png)
 The purchaseanalysisframe class extends Frame and provides functionality to analyze purchases.
 
 ### 6.Class:deleteoptions
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/delete_options.png)
 This class extends Frame and is the main window for selecting delete operations. It contains three buttons:<br/>
 
 ~Product Delete<br/>
@@ -150,18 +160,23 @@ This class extends Frame and is the main window for selecting delete operations.
 Each button opens a corresponding window for deleting a product, customer, or bill.
 
 ### 7.Class:CustomerDelete
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/customer_delete.png)
 This class extends Frame and provides a user interface for deleting a customer by their ID.
 
 ### 8.Class:ProductDelete
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/product_delete.png)
 This class extends Frame and provides a user interface for deleting a product by its ID.
 
 ### 9.Class:BillDelete
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/bill_delete.png)
 This class extends Frame and provides a user interface for deleting a bill by its ID.
 
 ### 10.Class:AddProductFrame
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/new_product.png)
 This class extends Frame and provides a user interface for adding a new product and a new seller.
 
 ### 11.Class:productanalysisframe
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/product_report.png)
 This class extends Frame and provides a user interface for generating product sales reports based on a product ID and a date range.
 
 
