@@ -191,9 +191,9 @@ The paysellerframe class extends Frame and provides functionality to pay a selle
 ![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/customer_payment.png)<br/>
 The paycustomerframe class extends Frame and provides functionality to get balance payments from customers by their Id.
 
+
 ## File: Bill 
 The Bill class handles operations related to billing, including creating new bills, retrieving bill details, and performing sales analysis.
-
 
 ### Constructors:
 Bill(int cid, String date): Initializes a new bill with the given customer ID and date.<br/>
