@@ -1,6 +1,89 @@
 # INVOICE GENERATION AND INVENTORY MANAGEMENT SYSTEM
 
+Database Schema
+The following tables are used to manage customer data, products, bills, and sellers in the billing system.
 
+Customer Table
+Column	Type
+id	INT PRIMARY KEY AUTO_INCREMENT
+name	VARCHAR(255)
+phoneNo	VARCHAR(20)
+membership	BOOLEAN
+points	INT
+sql
+Copy code
+CREATE TABLE Customer (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255),
+    phoneNo VARCHAR(20),
+    membership BOOLEAN,
+    points INT
+);
+Product Table
+Column	Type
+id	INT PRIMARY KEY AUTO_INCREMENT
+name	VARCHAR(255)
+price	INT
+availableQuantity	INT
+tax	DOUBLE
+sql
+Copy code
+CREATE TABLE Product (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255),
+    price INT,
+    availableQuantity INT,
+    tax DOUBLE
+);
+Bill Table
+Column	Type
+billNo	INT PRIMARY KEY AUTO_INCREMENT
+dates	DATE
+customerId	INT
+totalPrice	INT
+totalTax	DOUBLE
+discount	DOUBLE
+sql
+Copy code
+CREATE TABLE Bill (
+    billNo INT PRIMARY KEY AUTO_INCREMENT,
+    dates DATE,
+    customerId INT,
+    totalPrice INT,
+    totalTax DOUBLE,
+    discount DOUBLE,
+    FOREIGN KEY (customerId) REFERENCES Customer(id)
+);
+BillProduct Table
+Column	Type
+billNo	INT
+productId	INT
+quantity	INT
+seller	VARCHAR(20)
+Primary Key:
+
+Composite key of billNo and productId.
+sql
+Copy code
+CREATE TABLE BillProduct (
+    billNo INT,
+    productId INT,
+    quantity INT,
+    seller VARCHAR(20),
+    PRIMARY KEY (billNo, productId),
+    FOREIGN KEY (billNo) REFERENCES Bill(billNo),
+    FOREIGN KEY (productId) REFERENCES Product(id)
+);
+Seller Table
+Column	Type
+name	VARCHAR(255) PRIMARY KEY
+balanceAmount	DOUBLE
+sql
+Copy code
+CREATE TABLE Seller (
+    name VARCHAR(255) PRIMARY KEY,
+    balanceAmount DOUBLE
+);
 ## File:App(Main Class)
 The App.java file contains the main class.The App class extends Frame and serves as the entry point of the application. It provides buttons for administrator and employee logins.
 
@@ -119,21 +202,91 @@ Bill(int cid, String date): Initializes a new bill with the given customer ID an
 Bill(int billNo, String date, int totalPrice, double totalTax, double discount, double rewardsdiscount, int netamount): Initializes a bill with all fields specified.
 
 ### Methods:
-### 1.Class:addBill 
+### 1.addBill 
 Adds a new bill to the database. If the customer has membership, their points are updated, and points can be applied as a discount. Returns the generated bill number.
 
-### 2.Class:getBillFromDB
+### 2.getBillFromDB
 Retrieves the details of a bill from the database given a bill number. Returns a formatted string containing the bill details.
 
-### 3.Class: salesanalysis
+### 3. salesanalysis
 Retrieves the list of bills within the given date range for sales analysis. Returns an ArrayList of Bill objects, including a summary bill with cumulative totals.
 
-### 4.Class:getLastBillNumber
+### 4.getLastBillNumber
 Retrieves the last bill number from the database. Returns the last bill number.
 
 ### 5.customeranalysisframe
 This class extends Frame and provides a user interface for generating customer purchase reports based on a customer ID and a date range.
 
+
+
+## File:Customer
+The Customer class manages customer-related operations such as creating new customers, updating customer information, and retrieving customer details.
+
+### Constructors
+Customer(String name, String phoneNo): Initializes a new customer with the given name and phone number.
+Customer(int id, String name, String phoneNo, Boolean membership, int points): Initializes a customer with all fields specified.
+
+### Methods
+### 1. connect
+Establishes a connection to the database. Returns the Connection object.
+
+### 2. insertCustomer
+Inserts a new customer into the database. Membership status is set based on the provided value. Returns the generated customer ID.
+
+### 3..updateCustomer
+Updates the membership status and adds points to the specified customer. Prints a success or failure message based on the outcome.
+
+### 4.deleteCustomer
+Deletes a customer from the database based on the provided customer ID. Prints a success or failure message based on the outcome.
+
+### 5.getCustomerDetails
+Retrieves customer details from the database based on the provided customer ID. Returns a Customer object if found, otherwise returns null.
+
+### 6.customerbalance
+Manages the customer's balance. Can either retrieve (get) or add (add) to the customer's balance based on the action specified. Returns a result message.
+
+### 7.customeranalysis
+Retrieves the list of bills for the specified customer within the given date range and calculates the total amount purchased. Also retrieves the customer's balance. Returns a formatted string containing the analysis.
+
+### 8.paycustomer
+Deducts a specified amount from the customer's balance if sufficient funds are available. Returns a result message indicating success or failure.
+
+# File:Product
+The Product class manages product-related operations such as creating new products, updating product information, and retrieving product details.
+
+### Constructors
+Product(String seller, String name, int price, int availableQuantity, double tax): Initializes a new product with the given seller, name, price, available quantity, and tax rate.
+
+### Methods
+### 1.connect
+Establishes a connection to the database. Returns the Connection object.
+
+### 2.insertProduct
+Inserts a new product into the database. Also updates the seller's balance amount based on the product's price and quantity.
+
+### 3.insertseller
+Inserts a new seller into the database with a balance amount of 0.
+
+### 4.isSellerAvailable
+Checks if a seller exists in the database. Returns true if the seller exists, otherwise false.
+
+### 5.payseller
+Deducts the specified amount from the seller's balance. Prints a success or error message based on the outcome.
+
+### 6.purchaseanalysis
+Retrieves the balance amount for each seller and calculates the total amount. Returns a formatted string containing the analysis.
+
+### 7.updateProduct
+Updates the specified field (price or quantity) of the product. If the quantity is updated, the seller's balance amount is also updated based on the new quantity.
+
+### 8.deleteProduct
+Deletes a product from the database based on the provided product ID. Prints a success or error message based on the outcome.
+
+### 9.getProductDetailById
+Retrieves the specified detail (name, price, tax, available quantity, seller) of the product. Returns the detail as a string.
+
+### 10.getProductSales
+Retrieves the sales data for the specified product within the given date range. Returns a formatted string containing the sales data.
 
 
 
