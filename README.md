@@ -92,14 +92,14 @@ This class creates the main frame of the application with three buttons: "NEW BI
 Each button is associated with an action listener that opens a new window when clicked.
 
 ### 1A).newbill:
-![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/new_bill.png)
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/newbill.png)
 This class facilitates the creation of a new bill.
 Users can enter product IDs and quantities, and the application updates the invoice area with these details.
 It also calculates the total value of the bill and allows the user to continue to the final billing process.
 Additional features include changing the date, clearing the last item, and handling membership status for discounts.
 
 ### 1B).printfunction:
-![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/new_bill1.png)
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/newbill1.png)
 <br/>
 This class handles customer selection (existing or new) before finalizing the bill.
 For existing customers, the bill is created and customer details are fetched.
@@ -126,7 +126,7 @@ It connects to a MySQL database, retrieves product details (ID, Name, Quantity),
 Products with a quantity less than or equal to 5 are marked as "Critical Level", and others as "Normal Level".
 
 ### LOCALLY SAVED BILL FILE:<br/> 
-![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/saved_bill.png)
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/savedbill.png)
 
 ### 4.popuperror:
 
