@@ -84,11 +84,25 @@ Opens a new EmployeeFrame upon successful login or a popuperror frame if the log
 This class creates the main frame of the application with three buttons: "NEW BILL", "PRINT BILL", and "STOCK LIST".
 Each button is associated with an action listener that opens a new window when clicked.
 
-### 1.stocklist:
-![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/Stock_status.png)
-This class displays a list of products from the database.
-It connects to a MySQL database, retrieves product details (ID, Name, Quantity), and shows them in a text area.
-Products with a quantity less than or equal to 5 are marked as "Critical Level", and others as "Normal Level".
+### 1A).newbill:
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/new_bill.png)
+This class facilitates the creation of a new bill.
+Users can enter product IDs and quantities, and the application updates the invoice area with these details.
+It also calculates the total value of the bill and allows the user to continue to the final billing process.
+Additional features include changing the date, clearing the last item, and handling membership status for discounts.
+
+### 1B).printfunction:
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/new_bill1.png)
+This class handles customer selection (existing or new) before finalizing the bill.
+For existing customers, the bill is created and customer details are fetched.
+For new customers, the application validates the input and creates a new customer entry in the database.
+The final bill is generated and displayed in the finalprint class.
+
+### 1C).finalprint:
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/new_bill2.png)
+This class generates the final bill and saves it to a file.
+It writes customer details, item details, total amount, tax, discounts, net payable amount, and balance to a file.
+The bill is also saved in the database using the Bill.addBill method.
 
 ### 2.billprint:
 ![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/print_bill.png)
@@ -96,31 +110,18 @@ This class allows users to print a bill by entering the bill number.
 It provides a text field to input the bill number, a submit button to retrieve the bill, and a text area to display the bill details.
 The Bill.getBillFromDB method is used to fetch the bill details from the database.
 
-### 3.newbill:
-![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/new_bill.png)
-This class facilitates the creation of a new bill.
-Users can enter product IDs and quantities, and the application updates the invoice area with these details.
-It also calculates the total value of the bill and allows the user to continue to the final billing process.
-Additional features include changing the date, clearing the last item, and handling membership status for discounts.
+### 3.stocklist:
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/Stock_status.png)
+This class displays a list of products from the database.
+It connects to a MySQL database, retrieves product details (ID, Name, Quantity), and shows them in a text area.
+Products with a quantity less than or equal to 5 are marked as "Critical Level", and others as "Normal Level".
 
-### 4.printfunction:
-![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/new_bill1.png)
-This class handles customer selection (existing or new) before finalizing the bill.
-For existing customers, the bill is created and customer details are fetched.
-For new customers, the application validates the input and creates a new customer entry in the database.
-The final bill is generated and displayed in the finalprint class.
 
-### 5.finalprint:
-![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/new_bill2.png)
-This class generates the final bill and saves it to a file.
-It writes customer details, item details, total amount, tax, discounts, net payable amount, and balance to a file.
-The bill is also saved in the database using the Bill.addBill method.
-
-### 6.popuperror:
+### 4.popuperror:
 
 This class creates a popup window to display error messages.
 
-### 7.popupsuccess:
+### 5.popupsuccess:
 
 This class creates a popup window to display success messages.
 
@@ -129,28 +130,23 @@ This class creates a popup window to display success messages.
 ![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/admin_main.png)
 The AdminFrame class is the main class that extends Frame and serves as the user interface for administrative tasks such as adding products, sales analysis, customer payments, deleting options, purchase analysis, viewing inventory, updating products, paying sellers, product analysis, and customer analysis..
 
+### 1.Class:AddProductFrame
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/new_product.png)
+This class extends Frame and provides a user interface for adding a new product and a new seller.
 
-### 1.Class: paysellerframe
-![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/seller_payment.png)
-The paysellerframe class extends Frame and provides functionality to pay a seller.
-
-### 2.Class: paycustomerframe
-![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/customer_payment.png)
-The paycustomerframe class extends Frame and provides functionality to record customer payments.
-
-### 3.Class: updateproductframe
+### 2.Class: updateproductframe
 ![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/update_product.png)
 The updateproductframe class extends Frame and provides functionality to update product details.
 
-### 4.Class: salesanalysisframe
+### 3.Class: salesanalysisframe
 ![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/sales_analysis_billwisereport.png)
 The salesanalysisframe class extends Frame and provides functionality to analyze sales.
 
-### 5.Class: purchaseanalysisframe
+### 4.Class: purchaseanalysisframe
 ![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/purchase_analysis.png)
 The purchaseanalysisframe class extends Frame and provides functionality to analyze purchases.
 
-### 6.Class:deleteoptions
+### 5.Class:deleteoptions
 ![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/delete_options.png)
 This class extends Frame and is the main window for selecting delete operations. It contains three buttons:<br/>
 
@@ -159,26 +155,30 @@ This class extends Frame and is the main window for selecting delete operations.
 ~Bill Delete<br/>
 Each button opens a corresponding window for deleting a product, customer, or bill.
 
-### 7.Class:CustomerDelete
+### 6.Class:CustomerDelete
 ![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/customer_delete.png)
 This class extends Frame and provides a user interface for deleting a customer by their ID.
 
-### 8.Class:ProductDelete
+### 7.Class:ProductDelete
 ![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/product_delete.png)
 This class extends Frame and provides a user interface for deleting a product by its ID.
 
-### 9.Class:BillDelete
+### 8.Class:BillDelete
 ![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/bill_delete.png)
 This class extends Frame and provides a user interface for deleting a bill by its ID.
 
-### 10.Class:AddProductFrame
-![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/new_product.png)
-This class extends Frame and provides a user interface for adding a new product and a new seller.
 
-### 11.Class:productanalysisframe
+### 9.Class:productanalysisframe
 ![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/product_report.png)
 This class extends Frame and provides a user interface for generating product sales reports based on a product ID and a date range.
 
+### 10.Class: paysellerframe
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/seller_payment.png)
+The paysellerframe class extends Frame and provides functionality to pay a seller.
+
+### 11.Class: paycustomerframe
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/customer_payment.png)
+The paycustomerframe class extends Frame and provides functionality to record customer payments.
 
 ## File: Bill 
 The Bill class handles operations related to billing, including creating new bills, retrieving bill details, and performing sales analysis.
