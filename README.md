@@ -93,6 +93,7 @@ Additional features include changing the date, clearing the last item, and handl
 
 ### 1B).printfunction:
 ![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/new_bill1.png)
+<br/>
 This class handles customer selection (existing or new) before finalizing the bill.
 For existing customers, the bill is created and customer details are fetched.
 For new customers, the application validates the input and creates a new customer entry in the database.
@@ -100,6 +101,7 @@ The final bill is generated and displayed in the finalprint class.
 
 ### 1C).finalprint:
 ![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/new_bill2.png)
+<br/>
 This class generates the final bill and saves it to a file.
 It writes customer details, item details, total amount, tax, discounts, net payable amount, and balance to a file.
 The bill is also saved in the database using the Bill.addBill method.
@@ -116,6 +118,8 @@ This class displays a list of products from the database.
 It connects to a MySQL database, retrieves product details (ID, Name, Quantity), and shows them in a text area.
 Products with a quantity less than or equal to 5 are marked as "Critical Level", and others as "Normal Level".
 
+### LOCALLY SAVED BILL FILE:<br/> 
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/saved_bill.png)
 
 ### 4.popuperror:
 
