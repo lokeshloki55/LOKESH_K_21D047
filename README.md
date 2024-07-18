@@ -99,7 +99,7 @@ It also calculates the total value of the bill and allows the user to continue t
 Additional features include changing the date, clearing the last item, and handling membership status for discounts.
 
 ### 1B).printfunction:
-![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/newbill1.png)
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/newbill2.png)
 <br/>
 This class handles customer selection (existing or new) before finalizing the bill.
 For existing customers, the bill is created and customer details are fetched.
