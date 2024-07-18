@@ -64,13 +64,13 @@ The App.java file contains the main class.The App class extends Frame and serves
 adminButton: A button for administrator login.<br/>
 employeeButton: A button for employee login.
 
-### CheckAdminFrame:
+### CheckAdminFrame:*(username:admin ,password 123)
 
 A frame that prompts the user to enter a username and password for administrator login.
 Checks if the credentials match the hardcoded values (admin and 123).
 Opens a new AdminFrame upon successful login or a popuperror frame if the login fails.
 
-### CheckEmployeeFrame:
+### CheckEmployeeFrame:*(username:employee1 , password:321)
 
 Similar to checkAdminFrame, but for employee login.
 Checks if the credentials match the hardcoded values (employee1 and 321).
