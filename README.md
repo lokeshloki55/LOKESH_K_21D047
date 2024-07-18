@@ -138,7 +138,7 @@ This class creates a popup window to display success messages.
 
 
 ## File: AdminFrame
-![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/admin_main.png)
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/admin_main.png)<br/>
 The AdminFrame class is the main class that extends Frame and serves as the user interface for administrative tasks such as adding products, sales analysis, customer payments, deleting options, purchase analysis, viewing inventory, updating products, paying sellers, product analysis, and customer analysis..
 
 ### 1.Class:AddProductFrame
@@ -168,7 +168,7 @@ Each button opens a corresponding window for deleting a product, customer, or bi
 
 ### 6.Class:CustomerDelete
 ![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/customer_delete.png)<br/>
-This class extends Frame and provides a user interface for deleting a customer by their ID.
+This class extends Frame and provides a user interface for deleting a customer by their ID.In the above image error message is shown beacause the customer with Id:19 was not available in the customer table.
 
 ### 7.Class:ProductDelete
 ![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/product_delete.png)<br/>
