@@ -1,6 +1,61 @@
 # INVOICE GENERATION AND INVENTORY MANAGEMENT SYSTEM
 
 
+## Tables
+
+### Customer Table
+
+| Column      | Type         |
+|-------------|--------------|
+| id          | INT PRIMARY KEY AUTO_INCREMENT |
+| name        | VARCHAR(255) |
+| phoneNo     | VARCHAR(20)  |
+| membership  | BOOLEAN      |
+| points      | INT          |
+
+### Product Table
+
+| Column            | Type                      |
+|-------------------|---------------------------|
+| id                | INT PRIMARY KEY AUTO_INCREMENT |
+| name              | VARCHAR(255)              |
+| price             | INT                       |
+| availableQuantity | INT                       |
+| tax               | DOUBLE                    |
+
+### Bill Table
+
+| Column       | Type         |
+|--------------|--------------|
+| billNo       | INT PRIMARY KEY AUTO_INCREMENT |
+| dates        | DATE         |
+| customerId   | INT          |
+| totalPrice   | INT          |
+| totalTax     | DOUBLE       |
+| discount     | DOUBLE       |
+| customerId   | INT, FOREIGN KEY(Customer(id)) |
+
+### BillProduct Table
+
+| Column      | Type                     |
+|-------------|--------------------------|
+| billNo      | INT                      |
+| productId   | INT                      |
+| quantity    | INT                      |
+| seller      | VARCHAR(20)              |
+| PRIMARY KEY | (billNo, productId)      |
+| billNo      | INT, FOREIGN KEY(Bill(billNo)) |
+| productId   | INT, FOREIGN KEY(Product(id)) |
+
+### Seller Table
+
+| Column         | Type         |
+|----------------|--------------|
+| name           | VARCHAR(255) |
+| balanceAmount  | DOUBLE       |
+| PRIMARY KEY    | (name)       |
+
+
 ## File:App(Main Class)
 The App.java file contains the main class.The App class extends Frame and serves as the entry point of the application. It provides buttons for administrator and employee logins.
 
