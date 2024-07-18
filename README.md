@@ -39,7 +39,7 @@
 | discount     | DOUBLE       |
 | customerId   | INT, FOREIGN KEY(Customer(id)) |
 
-![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/table_bill.png)
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/tablebill.png)
 
 ### BillProduct Table
 
