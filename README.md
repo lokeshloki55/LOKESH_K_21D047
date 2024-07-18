@@ -135,23 +135,23 @@ This class creates a popup window to display success messages.
 The AdminFrame class is the main class that extends Frame and serves as the user interface for administrative tasks such as adding products, sales analysis, customer payments, deleting options, purchase analysis, viewing inventory, updating products, paying sellers, product analysis, and customer analysis..
 
 ### 1.Class:AddProductFrame
-![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/new_product.png)
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/new_product.png)<br/>
 This class extends Frame and provides a user interface for adding a new product and a new seller.
 
 ### 2.Class: updateproductframe
-![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/update_product.png)
-The updateproductframe class extends Frame and provides functionality to update product details.
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/update_product.png)<br/>
+The updateproductframe class extends Frame and provides functionality to update product details(We can select Quantity or price).
 
 ### 3.Class: salesanalysisframe
-![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/sales_analysis_billwisereport.png)
-The salesanalysisframe class extends Frame and provides functionality to analyze sales.
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/sales_analysis_billwisereport.png)<br/>
+The salesanalysisframe class extends Frame and provides functionality to analyze sales for the given date range.
 
 ### 4.Class: purchaseanalysisframe
-![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/purchase_analysis.png)
-The purchaseanalysisframe class extends Frame and provides functionality to analyze purchases.
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/purchase_analysis.png)<br/>
+The purchaseanalysisframe class extends Frame and provides functionality to analyze purchases from sellers for the given date range.
 
 ### 5.Class:deleteoptions
-![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/delete_options.png)
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/delete_options.png)<br/>
 This class extends Frame and is the main window for selecting delete operations. It contains three buttons:<br/>
 
 ~Product Delete<br/>
@@ -160,29 +160,29 @@ This class extends Frame and is the main window for selecting delete operations.
 Each button opens a corresponding window for deleting a product, customer, or bill.
 
 ### 6.Class:CustomerDelete
-![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/customer_delete.png)
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/customer_delete.png)<br/>
 This class extends Frame and provides a user interface for deleting a customer by their ID.
 
 ### 7.Class:ProductDelete
-![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/product_delete.png)
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/product_delete.png)<br/>
 This class extends Frame and provides a user interface for deleting a product by its ID.
 
 ### 8.Class:BillDelete
-![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/bill_delete.png)
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/bill_delete.png)<br/>
 This class extends Frame and provides a user interface for deleting a bill by its ID.
 
 
 ### 9.Class:productanalysisframe
-![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/product_report.png)
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/product_report.png)<br/>
 This class extends Frame and provides a user interface for generating product sales reports based on a product ID and a date range.
 
 ### 10.Class: paysellerframe
-![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/seller_payment.png)
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/seller_payment.png)<br/>
 The paysellerframe class extends Frame and provides functionality to pay a seller.
 
 ### 11.Class: paycustomerframe
-![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/customer_payment.png)
-The paycustomerframe class extends Frame and provides functionality to record customer payments.
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/customer_payment.png)<br/>
+The paycustomerframe class extends Frame and provides functionality to get balance payments from customers by their Id.
 
 ## File: Bill 
 The Bill class handles operations related to billing, including creating new bills, retrieving bill details, and performing sales analysis.
