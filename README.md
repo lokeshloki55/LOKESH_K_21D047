@@ -1,17 +1,19 @@
 # INVOICE GENERATION AND INVENTORY MANAGEMENT SYSTEM
 
 
-## Tables
+## Database Section-Tables
 
 ### Customer Table
 
 | Column      | Type         |
-|-------------|--------------|
+|-------------|--------------|                  
 | id          | INT PRIMARY KEY AUTO_INCREMENT |
 | name        | VARCHAR(255) |
 | phoneNo     | VARCHAR(20)  |
 | membership  | BOOLEAN      |
 | points      | INT          |
+
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/table_customer.png)
 
 ### Product Table
 
@@ -22,6 +24,8 @@
 | price             | INT                       |
 | availableQuantity | INT                       |
 | tax               | DOUBLE                    |
+
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/table_product.png)
 
 ### Bill Table
 
@@ -35,6 +39,8 @@
 | discount     | DOUBLE       |
 | customerId   | INT, FOREIGN KEY(Customer(id)) |
 
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/table_bill.png)
+
 ### BillProduct Table
 
 | Column      | Type                     |
@@ -42,7 +48,6 @@
 | billNo      | INT                      |
 | productId   | INT                      |
 | quantity    | INT                      |
-| seller      | VARCHAR(20)              |
 | PRIMARY KEY | (billNo, productId)      |
 | billNo      | INT, FOREIGN KEY(Bill(billNo)) |
 | productId   | INT, FOREIGN KEY(Product(id)) |
@@ -55,7 +60,9 @@
 | balanceAmount  | DOUBLE       |
 | PRIMARY KEY    | (name)       |
 
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/table_seller.png)
 
+## CODE SECTION
 ## File:App(Main Class)
 ![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/app.png)
 The App.java file contains the main class.The App class extends Frame and serves as the entry point of the application. It provides buttons for administrator and employee logins.
