@@ -142,11 +142,11 @@ The salesanalysisframe class extends Frame and provides functionality to analyze
 The purchaseanalysisframe class extends Frame and provides functionality to analyze purchases.
 
 ### 6.Class:deleteoptions
-This class extends Frame and is the main window for selecting delete operations. It contains three buttons:
+This class extends Frame and is the main window for selecting delete operations. It contains three buttons:<br/>
 
-~Product Delete
-~Customer Delete
-~Bill Delete
+~Product Delete<br/>
+~Customer Delete<br/>
+~Bill Delete<br/>
 Each button opens a corresponding window for deleting a product, customer, or bill.
 
 ### 7.Class:CustomerDelete
@@ -170,7 +170,7 @@ The Bill class handles operations related to billing, including creating new bil
 
 
 ### Constructors:
-Bill(int cid, String date): Initializes a new bill with the given customer ID and date.
+Bill(int cid, String date): Initializes a new bill with the given customer ID and date.<br/>
 Bill(int billNo, String date, int totalPrice, double totalTax, double discount, double rewardsdiscount, int netamount): Initializes a bill with all fields specified.
 
 ### Methods:
@@ -195,7 +195,7 @@ This class extends Frame and provides a user interface for generating customer p
 The Customer class manages customer-related operations such as creating new customers, updating customer information, and retrieving customer details.
 
 ### Constructors
-Customer(String name, String phoneNo): Initializes a new customer with the given name and phone number.
+Customer(String name, String phoneNo): Initializes a new customer with the given name and phone number.<br/>
 Customer(int id, String name, String phoneNo, Boolean membership, int points): Initializes a customer with all fields specified.
 
 ### Methods
@@ -227,7 +227,8 @@ Deducts a specified amount from the customer's balance if sufficient funds are a
 The Product class manages product-related operations such as creating new products, updating product information, and retrieving product details.
 
 ### Constructors
-Product(String seller, String name, int price, int availableQuantity, double tax): Initializes a new product with the given seller, name, price, available quantity, and tax rate.
+Product(String seller, String name, int price, int availableQuantity, double tax)<br/>
+Initializes a new product with the given seller, name, price, available quantity, and tax rate.
 
 ### Methods
 ### 1.connect
