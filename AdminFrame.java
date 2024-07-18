@@ -438,7 +438,7 @@ class salesanalysisframe extends Frame {
 
         setLayout(null);
         setSize(frameWidth, frameHeight);
-        setTitle("Date Range Selection");
+        setTitle("Date wise Bill Report");
         setVisible(true);
 
         addWindowListener(new WindowAdapter() {

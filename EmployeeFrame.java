@@ -103,7 +103,7 @@ class stocklist extends Frame {
         
 
         setLayout(null);
-        setTitle("Product List");
+        setTitle("Stock Status");
         setSize(1000, 1000);
         setVisible(true);
 
@@ -478,7 +478,7 @@ class finalprint extends Frame {
             b.totalPrice=b.totalPrice+sum;
             b.totalTax=b.totalTax+tax;
         }
-        System.out.println("Total price "+b.totalPrice);
+       
         if(b.totalPrice>1000&&b.totalPrice<3000)
         b.disamt=(int)(b.totalPrice*0.05);
         else if(b.totalPrice>3000)
@@ -486,7 +486,6 @@ class finalprint extends Frame {
         fw.write("\n");
         fw.write("TOTAL AMOUNT WITHOUT TAX:"+String.valueOf(b.totalPrice)+"\n");
        
-      // if(member.equals("Y"))
         b.rewardsdiscount=c.points;
 
         b.netamount=b.totalPrice-(int)b.disamt-(int)b.rewardsdiscount;

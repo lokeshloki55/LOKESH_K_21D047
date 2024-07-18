@@ -19,6 +19,7 @@ public class App  extends Frame{
     
      public App() {
         Font buttonFont = new Font("Arial", Font.PLAIN, 32);
+        Font labelFont = new Font("Arial", Font.BOLD, 44);
 
         Button adminButton = new Button("Administrator");
         adminButton.setBounds(400, 350, 220, 100); 
@@ -27,9 +28,14 @@ public class App  extends Frame{
         Button employeeButton = new Button("Employee");
         employeeButton.setBounds(400, 475, 220, 100); 
         employeeButton.setFont(buttonFont); 
+
+        Label userLabel = new Label("GENERAL STORES");
+        userLabel.setBounds(300,200,450,100);
+        userLabel.setFont(labelFont); 
+
          add(adminButton);
          add(employeeButton);
- 
+         add(userLabel);
          adminButton.addActionListener(new ActionListener() {
              @Override
              public void actionPerformed(ActionEvent e) {

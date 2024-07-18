@@ -165,7 +165,7 @@ public static int addBill(Bill b,String member) {
             }
 
             billDetails.append("\n")
-                       .append("Total Amount: ").append(totalPrice).append("\n")
+                       .append("Total Amount(Excl.Tax): ").append(totalPrice-totalTax).append("\n")
                        .append("Total Tax: ").append(totalTax).append("\n")
                        .append("Discount: ").append(discount).append("\n")
                        .append("Royalty: ").append(rewardsdiscount).append("\n")
