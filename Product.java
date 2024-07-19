@@ -43,7 +43,7 @@ public class Product {
             pstmt.setDouble(5, product.tax);
             pstmt.executeUpdate();
             int payableamount=(product.price*product.availableQuantity);
-            pstmt1.setInt(1,(int)(payableamount/1.1));   //assuming profit as 10%.
+            pstmt1.setInt(1,(int)(payableamount/1.3));   //assuming profit as 30%.
             pstmt1.setString(2,product.seller);
             pstmt1.executeUpdate();
         } catch (SQLException e) {
@@ -167,7 +167,7 @@ public class Product {
           String seller=getProductDetailById(productId,"seller");
          // int availableQuantity=Integer.valueOf(getProductDetailById(productId,"availablequantity"));
           int payableamount=(price*newValue);
-          preparedStatement1.setInt(1,(int)(payableamount/1.1));   //assuming profit as 10%.
+          preparedStatement1.setInt(1,(int)(payableamount/1.3));   //assuming profit as 30%.
           preparedStatement1.setString(2,seller);
           preparedStatement1.executeUpdate();
           }
