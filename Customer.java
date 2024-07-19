@@ -1,7 +1,4 @@
-
-
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.sql.*;
 
 public class Customer {
@@ -100,28 +97,6 @@ public class Customer {
             e.printStackTrace();
         }
     }
-
-
-    public static void deleteCustomer(int customerId) {
-      String query = "DELETE FROM customers WHERE id = ?";
-
-      try (Connection connection = Customer.connect();
-      PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-          
-          preparedStatement.setInt(1, customerId);
-
-          int rowsAffected = preparedStatement.executeUpdate();
-          if (rowsAffected > 0) {
-              System.out.println("Customer deleted successfully.");
-          } else {
-              System.out.println("No customer found with the given ID.");
-          }
-      } catch (SQLException e) {
-          e.printStackTrace();
-      }
-  }
-
-
 
   public static Customer getCustomerDetails(int customerId) {
     String customerQuery = "SELECT id, name, phoneNo, membership, points FROM Customer WHERE id = ?";
