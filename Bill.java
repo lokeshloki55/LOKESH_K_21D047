@@ -1,8 +1,5 @@
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Bill {
 
@@ -65,7 +62,7 @@ public static int addBill(Bill b,String member) {
         }
 
         // Apply points as discount if available and customer says yes
-        int temp_pts=0;
+       int temp_pts=0;
        if(member=="N"){
         temp_pts=customer.points;
         customer.points=0;
@@ -107,7 +104,7 @@ public static int addBill(Bill b,String member) {
           billProductStmt.executeBatch();
 
           if (customer.membership==true) {
-            int newPoints = (int) (b.totalPrice * 0.1); // adding 10% of bill value as points
+            int newPoints = (int) (b.totalPrice * 0.01); // giving 1% of bill value as points
             customer.points=temp_pts+newPoints;
         }
 
