@@ -1,6 +1,3 @@
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.awt.*;
 import java.awt.event.*;
 import java.time.LocalDate;
@@ -8,10 +5,6 @@ import java.time.format.DateTimeFormatter;
 
 
 public class App  extends Frame{
-
-     Map<String,List<Bill>> dateBill ;
-     static Map<Integer,Customer>clist=new HashMap<>();
-     static Map<String,Product>plist=new HashMap<>();
      Button adminButton, employeeButton;
      static LocalDate currentDate = LocalDate.now();
      static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -130,9 +123,7 @@ public class App  extends Frame{
                  }
              });
     
-         }
-    
-    
+         }    
      }  
 
      class checkEmployeeFrame extends Frame{
