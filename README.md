@@ -92,7 +92,7 @@ This class creates the main frame of the application with three buttons: "NEW BI
 Each button is associated with an action listener that opens a new window when clicked.
 
 ### 1A).newbill:
-![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/newbill.png)
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/newbill.png)<br/>
 This class facilitates the creation of a new bill.
 Users can enter product IDs and quantities, and the application updates the invoice area with these details.
 It also calculates the total value of the bill and allows the user to continue to the final billing process.
@@ -201,7 +201,7 @@ Bill(int billNo, String date, int totalPrice, double totalTax, double discount, 
 
 ### Methods:
 ### 1.addBill 
-Adds a new bill to the database. If the customer has membership, their points are updated, and points can be applied as a discount. Returns the generated bill number.
+Adds a new bill to the database. If the customer has membership, their points are updated(1% of net bill value), and points can be applied as a discount. Returns the generated bill number.
 
 ### 2.getBillFromDB
 Retrieves the details of a bill from the database given a bill number. Returns a formatted string containing the bill details.
