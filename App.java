@@ -5,6 +5,7 @@ import java.time.format.DateTimeFormatter;
 
 
 public class App  extends Frame{
+
      Button adminButton, employeeButton;
      static LocalDate currentDate = LocalDate.now();
      static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -47,12 +48,14 @@ public class App  extends Frame{
          setSize(1000, 1000);
          setTitle("Supermarket Application");
          setVisible(true);
+         
          addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 System.exit(0);
             }
         });
     }
+
     class checkAdminFrame extends Frame{
         TextField tf1,tf2;
          Button b1;
@@ -123,7 +126,9 @@ public class App  extends Frame{
                  }
              });
     
-         }    
+         }
+    
+    
      }  
 
      class checkEmployeeFrame extends Frame{

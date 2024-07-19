@@ -26,7 +26,6 @@ public class Bill {
               this.totalTax =0;
               this.disamt=0;
               this.productidQuantity = new LinkedHashMap<>();
-        
               this.billNo = ++i;
              }
 
@@ -61,21 +60,14 @@ public static int addBill(Bill b,String member) {
             throw new SQLException("Customer not found.");
         }
 
-        // Apply points as discount if available and customer says yes
-       int temp_pts=0;
-       if(member=="N"){
-        temp_pts=customer.points;
-        customer.points=0;
+       
+       if(customer.membership==true){
+        
+           customer.points=customer.points+(int)(b.totalPrice * 0.01);  // 1% as reward points
        }
-
-    //  if(member=="Y"){
-        if (customer.points > 0) {
-            b.rewardsdiscount= customer.points;
-            customer.points=0; // reset points after applying as discount
-        }
-  //  }
-
-    
+       else{
+           customer.points=0;
+       }
           billStmt.setString(1, b.date);
           billStmt.setInt(2, b.cid);
           billStmt.setInt(3, b.totalPrice);
@@ -103,12 +95,6 @@ public static int addBill(Bill b,String member) {
           }
           billProductStmt.executeBatch();
 
-          if (customer.membership==true) {
-            int newPoints = (int) (b.totalPrice * 0.01); // giving 1% of bill value as points
-            customer.points=temp_pts+newPoints;
-        }
-
-       
         updateCustomerPointsStmt.setInt(1, customer.points);
         updateCustomerPointsStmt.setInt(2, customer.id);
         updateCustomerPointsStmt.executeUpdate();

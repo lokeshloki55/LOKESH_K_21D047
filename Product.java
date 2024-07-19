@@ -112,7 +112,7 @@ public class Product {
 
    
 
-          public static String purchaseanalysis() {
+    public static String purchaseanalysis() {
             String query = "SELECT name, balanceAmount FROM Seller";
             String str="NAME     BALANCE AMOUNT";
             str+="\n";
@@ -272,9 +272,7 @@ public static String getProductSales(int productId, String startDate, String end
 
         connection = Product.connect();
 
-        String query = "SELECT bp.billNo, bp.quantity FROM BillProduct bp " +
-                       "JOIN Bill b ON bp.billNo = b.billNo " +
-                       "WHERE bp.productId = ? AND b.dates BETWEEN ? AND ?";
+        String query = "SELECT bp.billNo, bp.quantity FROM BillProduct bp JOIN Bill b ON bp.billNo = b.billNo WHERE bp.productId = ? AND b.dates BETWEEN ? AND ?";
 
         preparedStatement = connection.prepareStatement(query);
         preparedStatement.setInt(1, productId);

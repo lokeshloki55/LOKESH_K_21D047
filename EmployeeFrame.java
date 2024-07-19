@@ -101,7 +101,6 @@ class stocklist extends Frame {
                 ex.printStackTrace();
             }
         
-
         setLayout(null);
         setTitle("Stock Status");
         setSize(1000, 1000);
@@ -189,9 +188,9 @@ class billprint extends Frame {
         quantityField.setBounds(250, 100, 300, 40);
         quantityField.setFont(textFieldFont);
 
-        textField = new TextField("ProductId  Quantity");
-        textField.setBounds(50, 150, 500, 40);
-        textField.setFont(textFieldFont);
+        Label ll = new Label("ProductId  Quantity");
+        ll.setBounds(50, 150, 500, 40);
+        ll.setFont(textFieldFont);
 
         invoiceArea = new TextArea();
         invoiceArea.setBounds(50, 200, 500, 400);
@@ -250,12 +249,15 @@ class billprint extends Frame {
         Label paidLabel = new Label("PAID AMOUNT:");
         paidLabel.setBounds(50, 800, 200, 40);
         paidLabel.setFont(labelFont);
+
+        Label msgLabel = new Label("Type *paid* if full amount is paid.");
+        msgLabel.setBounds(50, 900, 400, 40);
+        msgLabel.setFont(new Font("Arial", Font.PLAIN, 18));
     
         add(productLabel);
         add(productField);
         add(quantityLabel);
         add(quantityField);
-        add(textField);
         add(invoiceArea);
         add(addButton);
         add(continueButton);
@@ -269,7 +271,8 @@ class billprint extends Frame {
         add(paidField);
         add(member);
         add(memberField);
-
+        add(msgLabel);
+        add(ll);
         
 
       
@@ -300,8 +303,7 @@ class billprint extends Frame {
         continueButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println(Integer.valueOf(paidField.getText()));
-                new printfunction(invoiceArea,Integer.valueOf(paidField.getText()),memberField.getText());
+                new printfunction(invoiceArea,paidField.getText(),memberField.getText());
                 
             }
         });
@@ -337,7 +339,7 @@ class billprint extends Frame {
                     }
                     invoiceArea.setText(sb.toString().trim()); // Set the updated text
                 } else {
-                    invoiceArea.setText(""); // If text has 2 or fewer words, clear it
+                    invoiceArea.setText(""); // If text has 2 or lesser words, clear it
                 }
             }
         });
@@ -358,30 +360,62 @@ class billprint extends Frame {
 class printfunction extends Frame {
     TextField tf1,tf21,tf22,tf23;
     Button b1,b2;
+    Label l,l1,l2,l3,l4,l5;
     public static boolean isNumeric(String str) {
         return str.matches("\\d+");
     }
 
-    public printfunction(TextArea tf3,int paid,String member){
+    public printfunction(TextArea tf3,String paid,String member){
+
+        Font labelFont = new Font("Arial", Font.PLAIN, 22);
+        Font textFieldFont = new Font("Arial", Font.PLAIN, 24);
+        Font buttonFont = new Font("Arial", Font.PLAIN, 24);
         
         tf1=new TextField();
-        tf1.setBounds(200,150,200,50);
-        add(new Label("Existing Customer(Enter id):")).setBounds(200, 50, 150, 30);
-        add(new Label("New Customer:")).setBounds(500, 50, 150, 30);
+        tf1.setBounds(200,150,220,50);
+        tf1.setFont(textFieldFont);
+        l1= new Label("EXISTING CUSTOMER");
+        l1.setBounds(70, 80, 250, 30);
+        add(l1);
+
+        l= new Label("Enter Id:");
+        l.setBounds(70, 160, 100, 30);
+        add(l);
+        l.setFont(labelFont);
+        
+        l1.setFont(labelFont);
+        l2=new Label("NEW CUSTOMER:");
+        l2.setBounds(460, 80, 250, 30);
+        add(l2);
+        l2.setFont(labelFont);
         tf21=new TextField();
-        tf21.setBounds(500,150,200,50);
-        add(new Label("Name:")).setBounds(400, 170, 100, 30);
+        tf21.setBounds(630,150,200,50);
+        tf21.setFont(textFieldFont);
+        l3=new Label("Name:");
+        l3.setBounds(460, 170, 100, 30);
+        add(l3);
+        l3.setFont(labelFont);
         tf22=new TextField();
-        tf22.setBounds(500,200,200,50);
-        add(new Label("Phone number:")).setBounds(400, 220, 100, 30);
+        tf22.setBounds(630,200,200,50);
+        tf22.setFont(textFieldFont);
+        l4=new Label("Phone number:");
+        l4.setBounds(460, 220, 150, 30);
+        add(l4);
+        l4.setFont(labelFont);
         tf23=new TextField();
-        tf23.setBounds(500,250,200,50);
-        add(new Label("Membership(Y/N):")).setBounds(400, 270, 100, 30);
+        tf23.setBounds(630,250,200,50);
+        tf23.setFont(textFieldFont);
+        l5=new Label("Membership(Y/N):");
+        l5.setBounds(460, 270, 180, 30);
+        add(l5);
+        l5.setFont(labelFont);
         
         b1=new Button("Submit existing");
-        b1.setBounds(250, 220, 100,30);
+        b1.setBounds(220, 220, 180,50);
+        b1.setFont(buttonFont);
         b2=new Button("Submit new");
-        b2.setBounds(550, 320, 100,30);
+        b2.setBounds(600, 320, 170,50);
+        b2.setFont(buttonFont);
         add(tf1);
         add(tf21);
         add(tf22);
@@ -459,13 +493,16 @@ class printfunction extends Frame {
 
 
 class finalprint extends Frame {
-    public finalprint(String name,String pno,Bill b,Customer c,int paid,String member){
-        File file=new File(App.datetemp+"_"+name);
+    public finalprint(String name,String pno,Bill b,Customer c,String paid,String member){
+        File file=new File(App.datetemp+"_"+name+"_"+b.billNo);
         FileWriter fw;
         try {
             fw = new FileWriter(file,true);
-            fw.write("GENERAL STORES\n");
-            fw.write("Customer name :"+name+"     Customer phone:"+pno+"\n");
+            fw.write("****************   GENERAL STORES   *****************");
+            fw.write("\n");
+            fw.write("Customer name :"+name+"  |   Customer phone:"+pno+"\n");
+            fw.write("------------------------------------------------------");
+            fw.write("\n");
             fw.write("Item     Quantity     Amount"+"\n");
             LinkedHashMap<Integer , Integer> pq=b.productidQuantity;
               for(Map.Entry<Integer,Integer> e:pq.entrySet()){
@@ -483,25 +520,36 @@ class finalprint extends Frame {
         b.disamt=(int)(b.totalPrice*0.05);
         else if(b.totalPrice>3000)
         b.disamt=(int)(b.totalPrice*0.1);
-        fw.write("\n");
-        fw.write("TOTAL AMOUNT WITHOUT TAX:"+String.valueOf(b.totalPrice)+"\n");
        
+        if(member.equals("Y"))
         b.rewardsdiscount=c.points;
+        else
+        b.rewardsdiscount=0;
+
 
         b.netamount=b.totalPrice-(int)b.disamt-(int)b.rewardsdiscount;
-        int lastbillno= Bill.addBill(b,member);
-
         b.totalPrice=b.totalPrice-(int)b.totalTax;
-
-        int remamt=b.netamount-paid;
+        fw.write("\n");
+        fw.write("TOTAL AMOUNT WITHOUT TAX:"+String.valueOf(b.totalPrice)+"\n");
+        int lastbillno= Bill.addBill(b,member);
+        
+        if(!paid.equalsIgnoreCase("paid")){
+        int remamt=b.netamount-Integer.valueOf(paid);
         Customer.customerbalance(c.id,"add", remamt);
+        }
         
         fw.write("TOTAL TAX AMOUNT:"+String.valueOf(b.totalTax)+"\n");
         fw.write("TOTAL SAVINGS:"+String.valueOf(b.disamt)+"\n");
         fw.write("TOTAL SAVINGS BY REWARD POINTS:"+String.valueOf(b.rewardsdiscount)+"\n");
         fw.write("NET AMOUNT PAYABLE:"+String.valueOf(b.netamount+"\n"));
+        fw.write("\n");
+        if(paid.equalsIgnoreCase("paid"))
+        fw.write("TOTAL AMOUNT PAID:"+String.valueOf(b.netamount+"\n"));
+        else
         fw.write("TOTAL AMOUNT PAID:"+String.valueOf(paid+"\n"));
-        fw.write(Customer.customerbalance(c.id,"get",0));
+        fw.write("Total"+Customer.customerbalance(c.id,"get",0));
+        fw.write("\n");
+        fw.write("***Thank You for purchasing.Visit Again***");
         fw.close();
 
         } catch (IOException e1) {

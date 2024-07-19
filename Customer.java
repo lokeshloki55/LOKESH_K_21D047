@@ -1,4 +1,7 @@
-import java.util.*;
+
+
+import java.util.HashMap;
+import java.util.Map;
 import java.sql.*;
 
 public class Customer {
@@ -34,7 +37,7 @@ public class Customer {
       String url = "jdbc:mysql://localhost:3306/billingsystem";
       String username = "root";
       String password = "08669";
-        Connection conn = null;
+      Connection conn = null;
         try {
             conn = DriverManager.getConnection(url, username, password);
         } catch (SQLException e) {

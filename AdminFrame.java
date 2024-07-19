@@ -10,7 +10,6 @@ public class AdminFrame extends Frame {
         
         Font buttonFont = new Font("Arial", Font.PLAIN, 32);
 
-        
         int frameWidth = 1000;
         int buttonWidth = 270;
         int buttonHeight = 100;
@@ -22,7 +21,6 @@ public class AdminFrame extends Frame {
         int buttonX1 = centerX - buttonWidth - horizontalSpacing / 2;
         int buttonX2 = centerX + horizontalSpacing / 2;
 
-      
         Button addProductButton = new Button("Add New Product/Seller");
         addProductButton.setBounds(buttonX1, 150, buttonWidth, buttonHeight);
         addProductButton.setFont(new Font("Arial", Font.PLAIN, 23)); 
@@ -774,77 +772,6 @@ class BillDelete extends Frame {
     }
 }
 
-
-  /*   class  changeDateFrame extends Frame {
-        TextField tf1,tf2;
-        Button b1;
-        public changeDateFrame(){
-           
-        Font buttonFont = new Font("Arial", Font.PLAIN, 32);
-        Font labelFont = new Font("Arial", Font.PLAIN, 24);
-        Font textFieldFont = new Font("Arial", Font.PLAIN, 24);
-
-        int frameWidth = 1000;
-        int labelWidth = 350;
-        int labelHeight = 50;
-        int textFieldWidth = 300;
-        int textFieldHeight = 50;
-        int buttonWidth = 220;
-        int buttonHeight = 100;
-
-        int centerX = frameWidth / 2;
-
-        Label dateLabel = new Label("Enter the date to be Changed:");
-        dateLabel.setBounds(centerX - (labelWidth + textFieldWidth) / 2, 100, labelWidth, labelHeight);
-        dateLabel.setFont(labelFont); 
-
-        Label monthLabel = new Label("Enter the Month to be Changed:");
-        monthLabel.setBounds(centerX - (labelWidth + textFieldWidth) / 2, 200, labelWidth, labelHeight);
-        monthLabel.setFont(labelFont); 
-
-        TextField tf1 = new TextField();
-        tf1.setBounds(centerX - (labelWidth + textFieldWidth) / 2 + labelWidth, 100, textFieldWidth, textFieldHeight);
-        tf1.setFont(textFieldFont); 
-
-        TextField tf2 = new TextField();
-        tf2.setBounds(centerX - (labelWidth + textFieldWidth) / 2 + labelWidth, 200, textFieldWidth, textFieldHeight);
-        tf2.setFont(textFieldFont); 
-
-        Button b1 = new Button("Submit");
-        b1.setBounds(centerX - buttonWidth / 2, 300, buttonWidth, buttonHeight);
-        b1.setFont(buttonFont); 
-
-        add(dateLabel);
-        add(tf1);
-        add(monthLabel);
-        add(tf2);
-        add(b1);
-           
-            
-            b1.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                  App.datetemp=tf2.getText()+""+tf1.getText();
-                  tf1.setText("");
-                  tf2.setText("");
-                  new popupsuccess("Date Changed Successfully!!!");
-                }
-            });
-            setLayout(null);
-            setSize(1000, 1000);
-            setTitle("Change Date");
-            setVisible(true);
-    
-            addWindowListener(new WindowAdapter() {
-                public void windowClosing(WindowEvent e) {
-                    dispose();
-                }
-            });
-
-        }
-    }
-        */
-
     class AddProductFrame extends Frame {
         TextField idField, nameField, priceField, quantityField, taxField,sellerField;
         Button submitButton,submitseller;
@@ -998,17 +925,15 @@ class productanalysisframe extends Frame {
     Button submitButton;
 
     public productanalysisframe() {
-        // Create a font with a larger size
+
         Font labelFont = new Font("Arial", Font.PLAIN, 24);
         Font textFieldFont = new Font("Arial", Font.PLAIN, 24);
         Font buttonFont = new Font("Arial", Font.PLAIN, 24);
         Font textAreaFont = new Font("Arial", Font.PLAIN, 24);
 
-        // Frame dimensions
         int frameWidth = 1000;
         int frameHeight = 1000;
         
-        // Component dimensions
         int labelWidth = 150;
         int labelHeight = 30;
         int fieldWidth = 200;
@@ -1018,14 +943,12 @@ class productanalysisframe extends Frame {
         int textAreaWidth = 800;
         int textAreaHeight = 800;
 
-        // Calculate positions
         int labelX = 50;
         int fieldX = labelX + labelWidth + 10;
         int buttonX = labelX + 2 * (labelWidth + 10 + fieldWidth) / 2 - buttonWidth / 2;
         int textAreaX = (frameWidth - textAreaWidth) / 2;
         int textAreaY = 200;
 
-        // Labels
         Label productIdLabel = new Label("Product ID:");
         productIdLabel.setFont(labelFont);
         productIdLabel.setBounds(labelX, 50, labelWidth, labelHeight);
@@ -1038,7 +961,6 @@ class productanalysisframe extends Frame {
         endDateLabel.setFont(labelFont);
         endDateLabel.setBounds(labelX, 150, labelWidth, labelHeight);
 
-        // Text Fields
         productIdField = new TextField();
         productIdField.setFont(textFieldFont);
         productIdField.setBounds(fieldX, 50, fieldWidth, fieldHeight);
@@ -1051,17 +973,14 @@ class productanalysisframe extends Frame {
         endDateField.setFont(textFieldFont);
         endDateField.setBounds(fieldX, 150, fieldWidth, fieldHeight);
 
-        // Submit Button
         submitButton = new Button("Submit");
         submitButton.setFont(buttonFont);
         submitButton.setBounds(buttonX+100, 100, buttonWidth, buttonHeight);
 
-        // Text Area
         resultArea = new TextArea();
         resultArea.setFont(textAreaFont);
         resultArea.setBounds(textAreaX, textAreaY, textAreaWidth-10, textAreaHeight-50);
 
-        // Add components to the frame
         add(productIdLabel);
         add(productIdField);
         add(startDateLabel);
@@ -1071,7 +990,6 @@ class productanalysisframe extends Frame {
         add(submitButton);
         add(resultArea);
 
-        // Submit Button Action
         submitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -1083,7 +1001,6 @@ class productanalysisframe extends Frame {
             }
         });
 
-        // Set frame properties
         setLayout(null);
         setSize(frameWidth, frameHeight);
         setTitle("Product report");
