@@ -166,7 +166,7 @@ class billprint extends Frame {
  class newbill extends Frame {
     TextField productField, quantityField, textField,totField,datefeild;
     TextArea invoiceArea;
-    Button addButton, continueButton, clearButton,changedateButton;
+    Button addButton, continueButton, clearButton,changedateButton,inventoryButton;
 
     public newbill() {
        
@@ -221,12 +221,16 @@ class billprint extends Frame {
         changedateButton.setBounds(600, 340, 200, 50);
         changedateButton.setFont(buttonFont);
 
+        inventoryButton = new Button("Stock Availability");
+        inventoryButton.setBounds(600, 410, 200, 50);
+        inventoryButton.setFont(buttonFont);
+
         Label member = new Label("Use Points(Y/N):");
-        member.setBounds(600, 400, 200, 50);
+        member.setBounds(600, 460, 200, 50);
         member.setFont(buttonFont);
 
         TextField memberField = new TextField("Y");
-        memberField.setBounds(600, 470, 300, 40);
+        memberField.setBounds(600, 520, 300, 40);
         memberField.setFont(textFieldFont);
        
         Label productLabel = new Label("Product Id:");
@@ -273,6 +277,7 @@ class billprint extends Frame {
         add(memberField);
         add(msgLabel);
         add(ll);
+        add(inventoryButton);
         
 
       
@@ -313,6 +318,13 @@ class billprint extends Frame {
             public void actionPerformed(ActionEvent e) {
                App.datetemp= datefeild.getText();
                new popupsuccess("Date Changed Successfully!!!");
+            }
+        });
+
+       inventoryButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               new stocklist();
             }
         });
         
