@@ -92,11 +92,11 @@ This class creates the main frame of the application with three buttons: "NEW BI
 Each button is associated with an action listener that opens a new window when clicked.
 
 ### 1A).newbill:
-![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/newbill.png)<br/>
+![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/nb.png)<br/>
 This class facilitates the creation of a new bill.
 Users can enter product IDs and quantities, and the application updates the invoice area with these details.
 It also calculates the total value of the bill and allows the user to continue to the final billing process.
-Additional features include changing the date, clearing the last item, and handling membership status for discounts.
+Additional features include changing the date, clearing the last item, and handling membership status for discounts and the employee can refer to stock availability while billing.
 
 ### 1B).printfunction:
 ![Alt text](https://github.com/lokeshloki55/screenshots/blob/main/newbill2.png)
